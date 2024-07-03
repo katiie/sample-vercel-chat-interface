@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Message, continueConversation, getAnswer, streamAnswer } from './actions';
+import { getAnswer, streamAnswer } from './actions';
 import { readStreamableValue } from 'ai/rsc';
 
 
@@ -10,7 +10,6 @@ export const dynamic = 'force-dynamic';
 export const maxDuration = 30;
 
 export default function Home() {
-  const [conversation, setConversation] = useState<Message[]>([]);
   const [input, setInput] = useState<string>('');
   const [generation, setGeneration] = useState<string>('');
 
@@ -18,14 +17,6 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
     <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
 
-    <div>
-      <div>
-        {conversation.map((message, index) => (
-          <div key={index}>
-            {message.role}: {message.content}
-          </div>
-        ))}
-      </div>
       <div>
         <label className="relative block">
           <span className="sr-only">Search</span>
@@ -69,7 +60,6 @@ export default function Home() {
 
       </div>
 
-    </div>
     </div>
     </main>
   );

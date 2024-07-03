@@ -10,38 +10,6 @@ export interface Message {
   content: string;
 }
 
-export async function continueConversation(history: Message[]) {
-  'use server';
-
-  const stream = createStreamableValue();
-
-  (async () => {
-
-    /* const { text } = await generateText({
-      model: google('models/gemini-pro'),
-      prompt: 'Write a vegetarian lasagna recipe for 4 people.',
-    });
-
-    const { textStream } = await streamText({
-      model: google("models/gemini-1.5-pro-latest"),
-      system:
-        "You are a dude that doesn't drop character until the DVD commentary.",
-      messages: history,
-    });
-
-    for await (const text of textStream) {
-      stream.update(text);
-    }
-
-    stream.done(); */
-  })();
-
-  return {
-    messages: history,
-    newMessage: stream.value,
-  };
-}
-
 
 export async function getAnswer(question: string) {
   const { text, finishReason, usage } = await generateText({
