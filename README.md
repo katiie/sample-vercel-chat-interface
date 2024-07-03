@@ -14,11 +14,16 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To Run the project:
+1) Execute `npm install` and `npm run build`
+1) Create a file called '.env.local' in the main source file.
+2) Get a [google gemini key](https://ai.google.dev/gemini-api/docs/api-key)
+3) ADD the key to the '.env.local'.For instance if the key was 'XXXXX', set GOOGLE_GENERATIVE_AI_API_KEY as 'XXXXX'
+4) Execute `npm run dev`
+5) Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
 
 ## Learn More
 
